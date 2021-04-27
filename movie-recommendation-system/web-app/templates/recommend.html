@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css", href="{{ url_for('static', filename='css/style.css') }}">
+
+<div id="movie-content">
+    <div id="searched-movie">
+        <div id="movie-poster">
+            <img src={{poster}} alt="">
+        </div>
+        <div id="movie-details">
+    
+            <h2>{{title}}</h2>
+    
+            <h4>Language: {{language}}</h4>
+            <h4>Genre: {{genre}}</h4>
+            <h4>Rating: {{rating}}</h4>
+            <h4>Release date: {{release_date}}</h4>
+            <h4>Runtime: {{runtime}}</h4>
+            <h4>Status: {{status}}</h4>
+    
+            <h4>{{overview}}</h4>        
+        </div>
+    </div>
+    
+    <div id="movie-recommended">
+
+        <div>
+            <h2>RECOMMENDED MOVIES</h2>
+        </div>
+
+        <div id="movie-posters">
+            {% for item in recommend_dict %}
+                <div class="card">
+                    <div class="movie-img">
+                        <a>
+                            <img src={{item.poster}} title="{{item.title}}" alt="poster" onclick="get_movie_details(this.title)">
+                        </a>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+        </div>
+        
+    </div>
+
+</div>
+
+<script src="{{url_for('static', filename='js/home.js')}}"></script>
+
+
+
+
+
+

@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, Geneva, Tahoma, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    background-color: #1f4f66;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+header h3 {
+    color: white;
+    margin-left: 10px;
+}
+
+header i {
+    font-size: 23px;
+    color: #ffce42;
+}
+
+header div {
+    display: flex;
+    margin-left: 20px;
+}
+
+#main {
+    width: 100%;
+    min-height: 90%;
+    height: fit-content;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-box {
+    width: 550px;
+    height: 40px;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#autocomplete {
+    background-color: #e8e8e8;
+    padding: 0;
+    border-radius: 0px 0px 5px 5px;
+    max-height: 280px;
+    pointer-events: none;
+}
+
+#autocomplete li {
+    display: none;
+    list-style: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: default;
+    font-size: 16px;
+}
+
+#autocomplete li:hover {
+    background: #9c9b9b;
+}
+
+.search-box input {
+    outline: none;
+    border: none;
+    background: none;
+    color: black;
+    width: 100%;
+    line-height: 40px;
+    padding: 0 0 0 10px;
+    font-size: 16px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+
+.search-box #autocomplete-list {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.search-box.active {
+    border-radius: 5px 5px 0 0;
+}
+
+.search-box.active #autocomplete {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-box.active #autocomplete li {
+    display: block;
+}
+
+.search-box.active #autocomplete-list {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+#search-btn {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.search-box i {
+    color: black;
+}
+
+#loading {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://media.giphy.com/media/ycfHiJV6WZnQDFjSWH/giphy.gif);
+    background-size: 40%;
+    background-position: 50% 50%;
+    background-color: rgba(0, 0, 0, 1);
+    background-repeat: no-repeat;
+    -webkit-transition: background-image 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out;
+}
+
+
+#fail {
+    display: none;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+#results {
+    margin-top: 80px;
+    width: 100%;
+    height: 100%;
+}
+
+#movie-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#searched-movie {
+    display: flex;
+    flex-direction: row;
+}
+
+#movie-poster {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#movie-poster img {
+    height: 400px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+#movie-details {
+    width: 70%;
+    padding-left: 40px;
+    color: whitesmoke;
+}
+
+#movie-details > :nth-child(2) {
+    margin-top: 20px;
+}
+
+#movie-details > :nth-child(8) {
+    margin-top: 40px;
+}
+
+#movie-recommended {
+    margin-top: 50px;
+}
+
+#movie-recommended > :nth-child(1) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+
+#movie-posters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 20px;
+}
+
+.movie-img a {
+    cursor: pointer;
+}
+
+.movie-img img {
+    height: 400px;
+    width: 250px;
+    border-radius: 10px;
+}
